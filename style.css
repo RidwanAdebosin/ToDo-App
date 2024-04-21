@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #15101C;
+    color: #9E78CF;
+}
+
+/* Styling the todo container */
+.todo-container{
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: 70px auto;
+    /* text-align: start; */
+    padding: 20px 40px;
+    background: #3E1671;
+   
+    border-radius: 5px;
+}
+
+/* Styling the form */
+.form{
+    margin-block-end: 30px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+}
+
+.input{
+    border-color: #9E78CF;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn{
+    padding: 5px;
+    background: #9E78CF;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Styling the Todo List */
+li{
+    display: flex;
+    justify-content: space-between;
+    background: #15101C;
+    margin-block-end: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #9E78CF;
+}
+
+span{
+    display:flex;
+    gap: 5px;
+    cursor: pointer;
+}
