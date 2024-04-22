@@ -7,19 +7,20 @@
 body{
     background-color: #15101C;
     color: #9E78CF;
+    display: flex;
+    justify-content: center;
 }
 
 /* Styling the todo container */
 .todo-container{
-    background-color: white;
-    width: 70%;
-    height: auto;
-    margin: 70px auto;
-    /* text-align: start; */
-    padding: 20px 40px;
-    background: #3E1671;
-   
-    border-radius: 5px;
+    position: absolute;
+    top: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+    padding: 20px;
+    inline-size: 500px;
+    background-color: #fff ;
+    border-radius: 15px;
+
 }
 
 /* Styling the form */
@@ -28,24 +29,34 @@ body{
     display: flex;
     gap: 5px;
     align-items: center;
+    
 
 }
 
 .input{
-    border-color: #9E78CF;
+    /* border-color: #9E78CF; */
+    border: none;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
 }
 
 .btn{
-    padding: 5px;
+    padding: 10px;
     background: #9E78CF;
     border: none;
     border-radius: 5px;
+    color: white;
+    cursor: pointer;
 }
 
 /* Styling the Todo List */
+
+ul p{
+    color: white;
+    margin-block-end: 3px;
+}
+
 li{
     display: flex;
     justify-content: space-between;
@@ -61,3 +72,10 @@ span{
     gap: 5px;
     cursor: pointer;
 }
+
+/* Styling the features icon */
+i:hover{
+   box-shadow: 0 0 15px #fff;
+}
+
+
