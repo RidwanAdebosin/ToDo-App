@@ -17,12 +17,25 @@ const ulEl= document.querySelector(".list")
 const toDoList = (e) => {
     //the newTodo get the value in the input
     let newTodo =  inputEl.value;
+
     //creating an li element
     const liEl = document.createElement("li");
+
     //rendering the newTodo into the liEl
     liEl.innerText = newTodo;
+
     //append the li as a child into the ulEl
     ulEl.appendChild(liEl)
+
     // after submitting the value in the input the text should clear off the input box
     inputEl.value = ""
+
+    // creating a separate div for the todo icons
+    const checkBtnEl = document.createElement("div")
+    
+    //move the icon insdie the div
+    checkBtnEl.innerHTML = `<i class="fa-solid fa-check"></i>`
+
+    // append as a child to see it in the list Element
+    liEl.appendChild(checkBtnEl);
 }
