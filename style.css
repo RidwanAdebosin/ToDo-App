@@ -6,7 +6,7 @@
 
 body{
     background-color: #15101C;
-    color: #9E78CF;
+    color: #0D0713;
     display: flex;
     justify-content: center;
 }
@@ -18,7 +18,7 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
     padding: 20px;
     inline-size: 500px;
-    background-color: #fff ;
+    background-color: #1C1826;
     border-radius: 15px;
 
 }
@@ -34,16 +34,27 @@ body{
 }
 
 .input{
-    /* border-color: #9E78CF; */
+    font-family: cursive;
+    font-size: 20px;
     border: none;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
+    background: #1C1826;
+    color: #7D68AD;
+}
+
+.input::placeholder{
+    color: lightgray;
+}
+
+.input:focus{
+    border: none;
 }
 
 .btn{
     padding: 10px;
-    background: #9E78CF;
+    background: #907ABB;
     border: none;
     border-radius: 5px;
     color: white;
@@ -60,11 +71,11 @@ ul p{
 li{
     display: flex;
     justify-content: space-between;
-    background: #15101C;
+    background: #16101C;
     margin-block-end: 5px;
     border-radius: 5px;
     padding: 10px;
-    color: #9E78CF;
+    color: #7D68AD;
 }
 
 span{
