@@ -31,11 +31,16 @@ const toDoList = (e) => {
     inputEl.value = ""
 
     // creating a separate div for the todo icons
-    const checkBtnEl = document.createElement("div")
-    
+    const editBtnEl = document.createElement("div");
+    const checkBtnEl = document.createElement("div");
+    const deleteBtnEl = document.createElement("div")
     //move the icon insdie the div
+    editBtnEl.innerHTML=`<i class="fa-regular fa-pen-to-square">
+    </i>`
     checkBtnEl.innerHTML = `<i class="fa-solid fa-check"></i>`
-
+    deleteBtnEl.innerHTML = `<i class="fa-solid fa-trash"></i>`
     // append as a child to see it in the list Element
+    liEl.appendChild(editBtnEl);
     liEl.appendChild(checkBtnEl);
+    liEl.appendChild(deleteBtnEl)
 }
