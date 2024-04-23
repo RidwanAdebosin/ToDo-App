@@ -71,14 +71,47 @@ ul p{
 
 li{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     background: #16101C;
     margin-block-end: 5px;
     border-radius: 5px;
     padding: 10px;
     font-family: cursive;
     color: #7D68AD;
+    list-style-type: none;
+    position: relative;
 }
+
+ /* Styling the features icon */
+
+.list li .fa-trash {
+   color: red;
+   position: absolute;
+   right: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+  
+}
+
+.list li .fa-check {
+    color: green;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+
+ .list li .fa-regular {
+    /* color: green; */
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+
+ i{
+    cursor: pointer;
+} 
 
 /* Making it responsive on all screen */
 @media (max-width: 300px) {
@@ -98,21 +131,9 @@ li{
     }
 }
 
-span{
-    display:flex;
-    gap: 5px;
-    cursor: pointer;
-}
 
-span i:hover{
-    color: red;
-    transform: translateY(-50%);
-}
 
-/* Styling the features icon */
-i:hover{
-   box-shadow: 0 0 15px #fff;
-}
+
 
 /* Styling the footer */
 footer{
