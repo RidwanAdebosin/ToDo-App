@@ -31,16 +31,18 @@ const toDoList = (e) => {
     inputEl.value = ""
 
     // creating a separate span for the todo icons
-    const editBtnEl = document.createElement("span");
     const checkBtnEl = document.createElement("span");
     const deleteBtnEl = document.createElement("span")
     //move the icon inside the span
-    editBtnEl.innerHTML=`<i class="fa-regular fa-pen-to-square">
-    </i>`
     checkBtnEl.innerHTML = `<i class="fa-solid fa-check"></i>`
     deleteBtnEl.innerHTML = `<i class="fa-solid fa-trash"></i>`
+
     // append as a child to see it in the list Element
-    liEl.appendChild(editBtnEl);
     liEl.appendChild(checkBtnEl);
-    liEl.appendChild(deleteBtnEl)
+    liEl.appendChild(deleteBtnEl);
+
+    // adding event listener to the check button
+    checkBtnEl.addEventListener('click', () => {
+        liEl.classList.toggle("checked")
+    })
 }
