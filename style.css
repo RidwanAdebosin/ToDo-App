@@ -114,11 +114,12 @@ li{
 } 
 
 /* Making it responsive on all screen */
-@media (max-width: 300px) {
-    li {
+@media (max-width: 600px) {
+    .list li {
         display: grid;
         gap: 10px;
-        
+        border: 3px solid red;
+        text-wrap: wrap;
     }
 
     .btn{
