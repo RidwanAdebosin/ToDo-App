@@ -17,7 +17,7 @@ body{
     top: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
     padding: 20px;
-    inline-size: 50%;
+    inline-size: 90%;
     background-color: #1C1826;
     border-radius: 15px;
     
@@ -71,6 +71,7 @@ ul p{
 
 li{
     display: flex;
+    align-items: center;
     /* justify-content: space-between; */
     background: #16101C;
     margin-block-end: 5px;
@@ -113,12 +114,21 @@ li{
     cursor: pointer;
 } 
 
+
+/* Styling the footer */
+footer{
+    margin-block-start: 20px;
+    text-align: end;
+    color: lightgray;
+    font-style: italic;
+}
+
+
 /* Making it responsive on all screen */
 @media (max-width: 600px) {
     .list li {
         display: grid;
         gap: 10px;
-        border: 3px solid red;
         text-wrap: wrap;
     }
 
@@ -130,17 +140,4 @@ li{
     .input{
         font-size: 12px;
     }
-}
-
-
-
-
-
-/* Styling the footer */
-footer{
-    margin-block-start: 20px;
-    text-align: end;
-    color: lightgray;
-    font-style: italic;
-}
-
+};

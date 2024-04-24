@@ -30,11 +30,11 @@ const toDoList = (e) => {
     // after submitting the value in the input the text should clear off the input box
     inputEl.value = ""
 
-    // creating a separate div for the todo icons
+    // creating a separate span for the todo icons
     const editBtnEl = document.createElement("span");
     const checkBtnEl = document.createElement("span");
     const deleteBtnEl = document.createElement("span")
-    //move the icon inside the div
+    //move the icon inside the span
     editBtnEl.innerHTML=`<i class="fa-regular fa-pen-to-square">
     </i>`
     checkBtnEl.innerHTML = `<i class="fa-solid fa-check"></i>`
