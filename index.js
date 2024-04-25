@@ -3,6 +3,14 @@ const inputEl = document.getElementById("input");
 const ulEl= document.querySelector(".list");
 const noOfTaskEl = document.querySelector(".no-of-tasks");
 
+//use JSON.parse to revert the string to an array
+let list = JSON.parse(localStorage.getItem("list"));
+console.log(list)
+
+//looping through the list to get each task
+list.forEach(task => {
+    toDoList(task);
+})
 
 // adding add event listener to catch what's written inside the input
 formEl.addEventListener("submit", (e) => {
@@ -13,13 +21,24 @@ formEl.addEventListener("submit", (e) => {
 
 
 //creating a function that get the input value from the form
-const toDoList = (e) => {
+const toDoList = (task) => {
+
     //the newTodo get the value in the input
     let newTodo =  inputEl.value;
+    //if there is a task create a newTask
+    if(task){
+        newTodo = task.name;
+    }
 
+    
     //creating an li element
     const liEl = document.createElement("li");
-
+    // const liEl = newTodo;
+    
+    //to get the checked item saved even after refreshing the page
+    if(task && task.checked){
+        liEl.classList.add("checked");
+    }
     //rendering the newTodo into the liEl
     liEl.innerText = newTodo;
 
@@ -63,23 +82,22 @@ const toDoList = (e) => {
         updateLocalStorage();
     })
 
-    // update task countand local storage when a new task is added or when existing task is edited
+    // update task count and local storage when a new task is added or when existing task is edited
     updateTaskCount();
-    // updateLocalStorage();
+    updateLocalStorage();
 };
 
-// store my taks into a local storage
+// store my tasks into a local storage
 const updateLocalStorage = () => {
-    const liEls = document.querySelectorAll("li")
-    let list = []
+    const liEls = document.querySelectorAll("li");
+    list = [];
     liEls.forEach(liEl => {
         list.push({
             name: liEl.innerText,
-            checked: liEl.classList.contains("checked"),
-            // deleted: liEl.removeChild,
+            checked: liEl.classList.contains("checked")
         })
     }) 
-    localStorage.setItem("list", JSON.stringify(list))
+    localStorage.setItem("list", JSON.stringify(list));
 }
 
 
