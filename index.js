@@ -48,22 +48,39 @@ const toDoList = (e) => {
         const totalTasks = ulEl.querySelectorAll("li").length;
         noOfTaskEl.innerText = totalTasks - checkedTasks;
     };
-    
+
     // adding event listener to the check button
     checkBtnEl.addEventListener('click', () => {
         liEl.classList.toggle("checked")
         updateTaskCount();
+        updateLocalStorage();
     });
 
     //add event listener to the delete button
     deleteBtnEl.addEventListener('click', () => {
         ulEl.removeChild(liEl);
         updateTaskCount();
+        updateLocalStorage();
     })
 
-    // update task count when a new task is added or when existing task is edited
+    // update task countand local storage when a new task is added or when existing task is edited
     updateTaskCount();
+    // updateLocalStorage();
 };
+
+// store my taks into a local storage
+const updateLocalStorage = () => {
+    const liEls = document.querySelectorAll("li")
+    let list = []
+    liEls.forEach(liEl => {
+        list.push({
+            name: liEl.innerText,
+            checked: liEl.classList.contains("checked"),
+            // deleted: liEl.removeChild,
+        })
+    }) 
+    localStorage.setItem("list", JSON.stringify(list))
+}
 
 
 
