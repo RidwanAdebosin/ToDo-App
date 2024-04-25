@@ -1,6 +1,9 @@
 const formEl= document.querySelector(".form");
 const inputEl = document.getElementById("input");
+// getting the ul element that has the class of .list from the HTML
+const ulEl= document.querySelector(".list");
 
+const noOfTaskEl = document.querySelector(".no-of-tasks");
 
 
 // adding add event listener to catch what's written inside the input
@@ -9,8 +12,6 @@ formEl.addEventListener("submit", (e) => {
     toDoList()
 });
 
-// getting the ul element that has the class of .list from the HTML
-const ulEl= document.querySelector(".list")
 
 
 //creating a function that get the input value from the form
@@ -25,10 +26,10 @@ const toDoList = (e) => {
     liEl.innerText = newTodo;
 
     //append the li as a child into the ulEl
-    ulEl.appendChild(liEl)
+    ulEl.appendChild(liEl);
 
     // after submitting the value in the input the text should clear off the input box
-    inputEl.value = ""
+    inputEl.value = "";
 
     // creating a separate span for the todo icons
     const checkBtnEl = document.createElement("span");
@@ -45,4 +46,13 @@ const toDoList = (e) => {
     checkBtnEl.addEventListener('click', () => {
         liEl.classList.toggle("checked")
     })
+
+
+    // getting the todo element that has the class of .no-of-tasks from the HTML
+//    let noOfTasks = liEl.length;
+
+
+   const noOfTasks = ulEl.querySelectorAll("li").length;
+   noOfTaskEl.innerText = noOfTasks;
+  
 }
