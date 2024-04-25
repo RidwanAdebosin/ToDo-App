@@ -1,8 +1,6 @@
 const formEl= document.querySelector(".form");
 const inputEl = document.getElementById("input");
-// getting the ul element that has the class of .list from the HTML
 const ulEl= document.querySelector(".list");
-
 const noOfTaskEl = document.querySelector(".no-of-tasks");
 
 
@@ -45,14 +43,19 @@ const toDoList = (e) => {
     // adding event listener to the check button
     checkBtnEl.addEventListener('click', () => {
         liEl.classList.toggle("checked")
-    })
+        updateTaskCount();
+    });
 
+    // update task count when a new task is added
+    updateTaskCount();
+};
 
-    // getting the todo element that has the class of .no-of-tasks from the HTML
-//    let noOfTasks = liEl.length;
+// function to update task count
+const updateTaskCount= () => {
+    const checkedTasks = ulEl.querySelectorAll("li.checked").length;
+    const totalTasks = ulEl.querySelectorAll("li").length;
+    noOfTaskEl.innerText = totalTasks - checkedTasks;
+};
 
-
-   const noOfTasks = ulEl.querySelectorAll("li").length;
-   noOfTaskEl.innerText = noOfTasks;
+   
   
-}
