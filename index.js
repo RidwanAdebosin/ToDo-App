@@ -46,9 +46,16 @@ const toDoList = (e) => {
         updateTaskCount();
     });
 
-    // update task count when a new task is added
+    //add event listener to the delete button
+    deleteBtnEl.addEventListener('click', () => {
+        ulEl.removeChild(liEl);
+        updateTaskCount();
+    })
+
+    // update task count when a new task is added or when existing task is edited
     updateTaskCount();
 };
+
 
 // function to update task count
 const updateTaskCount= () => {
