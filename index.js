@@ -29,6 +29,7 @@ const toDoList = (e) => {
     // after submitting the value in the input the text should clear off the input box
     inputEl.value = "";
 
+
     // creating a separate span for the todo icons
     const checkBtnEl = document.createElement("span");
     const deleteBtnEl = document.createElement("span")
@@ -40,6 +41,14 @@ const toDoList = (e) => {
     liEl.appendChild(checkBtnEl);
     liEl.appendChild(deleteBtnEl);
 
+
+    // function to update task count
+    const updateTaskCount= () => {
+        const checkedTasks = ulEl.querySelectorAll("li.checked").length;
+        const totalTasks = ulEl.querySelectorAll("li").length;
+        noOfTaskEl.innerText = totalTasks - checkedTasks;
+    };
+    
     // adding event listener to the check button
     checkBtnEl.addEventListener('click', () => {
         liEl.classList.toggle("checked")
@@ -57,12 +66,6 @@ const toDoList = (e) => {
 };
 
 
-// function to update task count
-const updateTaskCount= () => {
-    const checkedTasks = ulEl.querySelectorAll("li.checked").length;
-    const totalTasks = ulEl.querySelectorAll("li").length;
-    noOfTaskEl.innerText = totalTasks - checkedTasks;
-};
 
    
   
