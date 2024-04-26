@@ -3,14 +3,6 @@ const inputEl = document.getElementById("input");
 const ulEl= document.querySelector(".list");
 const noOfTaskEl = document.querySelector(".no-of-tasks");
 
-//use JSON.parse to revert the string to an array
-let list = JSON.parse(localStorage.getItem("list"));
-console.log(list)
-
-//looping through the list to get each task
-list.forEach(task => {
-    toDoList(task);
-})
 
 // adding add event listener to catch what's written inside the input
 formEl.addEventListener("submit", (e) => {
@@ -19,18 +11,16 @@ formEl.addEventListener("submit", (e) => {
 });
 
 
-
 //creating a function that get the input value from the form
 const toDoList = (task) => {
 
     //the newTodo get the value in the input
-    let newTodo =  inputEl.value;
+    let newTodo =  inputEl.value.trim();
     //if there is a task create a newTask
     if(task){
         newTodo = task.name;
     }
 
-    
     //creating an li element
     const liEl = document.createElement("li");
     // const liEl = newTodo;
@@ -91,14 +81,26 @@ const toDoList = (task) => {
 const updateLocalStorage = () => {
     const liEls = document.querySelectorAll("li");
     list = [];
-    liEls.forEach(liEl => {
+    ulEl.querySelectorAll("li").forEach(liEl => {
         list.push({
             name: liEl.innerText,
             checked: liEl.classList.contains("checked")
-        })
-    }) 
+        });
+    });
     localStorage.setItem("list", JSON.stringify(list));
-}
+};
+
+//use JSON.parse to revert the string to an array
+let list = JSON.parse(localStorage.getItem("list"));
+console.log(list);
+
+
+    // looping through the list to get each task
+    list.forEach(task => {
+        toDoList(task);
+    });
+
+
 
 
 
