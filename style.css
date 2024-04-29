@@ -9,6 +9,7 @@ body{
     color: #0D0713;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Styling the todo container */
@@ -17,7 +18,7 @@ body{
     top: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
     padding: 20px;
-    inline-size: 90%;
+    inline-size: 60%;
     background-color: #1C1826;
     border-radius: 15px;
     
@@ -146,6 +147,7 @@ footer{
         display: flex;
         flex-wrap: wrap;
         color: wheat;
+        font: 1em sans-serif;
     }
 
     .btn{
@@ -155,5 +157,6 @@ footer{
 
     .input{
         font-size: 20px;
+        font: 1em sans-serif;
     }
 };
