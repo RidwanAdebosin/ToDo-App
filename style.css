@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: #88d4ca;
 }
 
 .mainContainer {
@@ -173,5 +174,4 @@ footer {
     margin-block-end: 3px;
     font-family: sans-serif;
   }
-  
 }
