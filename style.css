@@ -167,4 +167,11 @@ footer {
     font-size: 20px;
     font: 1em sans-serif;
   }
+
+  ul p {
+    color: white;
+    margin-block-end: 3px;
+    font-family: sans-serif;
+  }
+  
 }
